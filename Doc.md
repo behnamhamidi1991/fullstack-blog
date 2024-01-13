@@ -742,4 +742,21 @@ So if I do this:
 $result = getSum(1, "1");
 // It's going to give me an error because one of the numbers is in a string
 
+
+
+// This is a function with which we return a string.
+function greeting(string $name): string {
+    return "Hello" . $name;
+}
+
+echo greeting(" John")
+
+
+// If a function doesn't return something, we should use void:
+function greeting(string $name): void {
+    echo "Hello" . $name;
+}
+
+
+
 ```

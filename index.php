@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-function getSum(int $a , int $b): int {
-    return $a + $b;
+function greeting(string $name): string {
+    return "Hello" . $name;
 }
 
-$result = getSum(1, 1);
-
+echo greeting(" John")
+ 
 
 ?>
 
