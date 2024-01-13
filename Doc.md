@@ -725,3 +725,21 @@ run();
 ```
 
 ### Optional Type Declarations
+
+```php
+
+declare(strict_types = 1);
+
+function getSum(int $a , int $b): int {
+    return $a + $b;
+}
+
+$result = getSum(1, 1);
+
+
+Using the keyword `int` I declared types of $a and $b "numbers"
+So if I do this:
+$result = getSum(1, "1");
+// It's going to give me an error because one of the numbers is in a string
+
+```

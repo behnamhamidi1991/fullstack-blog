@@ -1,16 +1,13 @@
 <?php 
 
+declare(strict_types = 1);
 
-
-const DB_NAME = "mydb";
-const DB_HOST = "localhost";
-
-
-function run () {
-    echo DB_NAME, DB_HOST;
+function getSum(int $a , int $b): int {
+    return $a + $b;
 }
 
-run();
+$result = getSum(1, 1);
+
 
 ?>
 
@@ -34,7 +31,7 @@ run();
     <div class="container mx-auto p-4 mt-4">
         <div class="bg-white rounded-lg shadow-md p-6">
            <p className="text-xl">
-               
+               <?= $result ?>
            </p>
           
         </div>
