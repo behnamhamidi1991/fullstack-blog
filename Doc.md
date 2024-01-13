@@ -767,6 +767,18 @@ $result = $square(5);
 
 echo "The square of 5 is " . $result;
 
+`CLOSURES`
+// Closures
+function createCounter() {
+    $count = 0;
+
+    $counter = function() use (&$count) {
+        return ++$count;
+    };
+
+    return $counter;
+}
+
 
 
 ```
