@@ -808,4 +808,10 @@ $result = applyCallback($double, 5);
 echo $result;
 
 
+// ARROW FUNCTIONS
+$add = fn  ($a, $b) => $a + $b;
+echo $add(4, 2)
+// Arrow functions in PHP are meant to be one line and we can't write mulilines arrow function like we do in JavaScript.
+
+
 ```
