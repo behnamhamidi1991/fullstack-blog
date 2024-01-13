@@ -32,14 +32,18 @@ $listings = [
         "location" => "San Francisco",
         "tags" => ["Software Development", "Java", "Python"]
     ], 
-]
+];
+
+
+function formatSaslary($salary) {
+    return '$' . number_format($salary, 2);
+}
 
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,18 +55,21 @@ $listings = [
 <body class="bg-gray-100">
     <header class="bg-blue-600 text-white p-4">
         <div class="container mx-auto">
-            <h1 class="text-3xl font-semibold">PHP From Scratch</h1>
+            <h1 class="text-3xl font-semibold">Job Listing</h1>
         </div>
     </header>
     <div class="container mx-auto p-4 mt-4">
-   
-        <div class="rounded-lg shadow-md p-6 <?= $index % 2 === 0 ? 'bg-blue-100' : 'bg-white' ?>">
-           <p className="text-xl">
+        <?php foreach ($listings as $index => $job) ?>
+        <div class="rounded-lg shadow-md <?= $index % 2 === 0 ? 'bg-blue-100' : 'bg-white' ?>">
+        <div class="p-4">
+            <h2><?= $job['title'] ?></h2>
+            <p className="text-xl text-blue-500"><?= $job['description'] ?></p>
+            <p className="text-xl text-blue-500"> <strong>Salary</strong> <?= $job['salary'] ?></p>
+            <p className="text-xl text-blue-500"> <strong>Location</strong> <?= $job['location'] ?></p>
 
-           </p>
-          
+
+        </div>
         </div>
     </div>
 </body>
-
-</html> 
+</html>
