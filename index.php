@@ -1,13 +1,39 @@
 <?php 
+$listings = [
+    [
+        "id" => 1,
+        "title" => "Software Engineer",
+        "description" => "We are seeking a skilled software engineer to develop high-quality software solutions.",
+        "salary" => 80000, 
+        "location" => "San Francisco",
+        "tags" => ["Software Development", "Java", "Python"]
+    ], 
+    [
+        "id" => 2,
+        "title" => "React.js Developer",
+        "description" => "We are looking for a skilled React Developer to develop our web applications.",
+        "salary" => 72000, 
+        "location" => "New York City",
+        "tags" => ["App Development", "JavaScript", "React.js"]
+    ], 
+    [
+        "id" => 3,
+        "title" => "PHP & Laravel",
+        "description" => "We are seeking a backend developer skilled in PHP and Laravel + MySQL.",
+        "salary" => 92000, 
+        "location" => "Chicago",
+        "tags" => ["Web Development", "PHP", "Laravel", "MySQL"]
+    ], 
+    [
+        "id" => 4,
+        "title" => "Software Engineer",
+        "description" => "We are seeking a skilled software engineer to develop high-quality software solutions.",
+        "salary" => 80000, 
+        "location" => "San Francisco",
+        "tags" => ["Software Development", "Java", "Python"]
+    ], 
+]
 
-declare(strict_types = 1);
-
-function greeting(string $name): string {
-    return "Hello" . $name;
-}
-
-echo greeting(" John")
- 
 
 ?>
 
@@ -18,7 +44,7 @@ echo greeting(" John")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Arithmatic Operations</title>
+    <title>Job Listing</title>
   
 </head>
 
@@ -29,9 +55,10 @@ echo greeting(" John")
         </div>
     </header>
     <div class="container mx-auto p-4 mt-4">
-        <div class="bg-white rounded-lg shadow-md p-6">
+   
+        <div class="rounded-lg shadow-md p-6 <?= $index % 2 === 0 ? 'bg-blue-100' : 'bg-white' ?>">
            <p className="text-xl">
-               <?= $result ?>
+
            </p>
           
         </div>
