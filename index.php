@@ -66,8 +66,6 @@ function formatSaslary($salary) {
             <p className="text-xl text-blue-500"><?= $job['description'] ?></p>
             <p className="text-xl text-blue-500"> <strong>Salary</strong> <?= $job['salary'] ?></p>
             <p className="text-xl text-blue-500"> <strong>Location</strong> <?= $job['location'] ?></p>
-
-
         </div>
         </div>
     </div>
