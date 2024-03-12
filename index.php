@@ -26,10 +26,6 @@ class User {
     $user2->login();
 
     var_dump($user1)
-
-
-
-
 ?>
 
 
