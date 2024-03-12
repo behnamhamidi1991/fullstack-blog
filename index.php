@@ -14,7 +14,7 @@ class User {
 
     // Methods
     public function login() {
-        echo "The user is logged in";
+        echo $this->name . " is logged in <br>";
     }
 }
 
