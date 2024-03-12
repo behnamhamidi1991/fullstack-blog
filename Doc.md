@@ -224,7 +224,7 @@ B:
 ```php
 $fullName = "John Doe";
 
-<?= "Hello, my name is $fullName" ?>
+<?= 'Hello, my name is $fullName' ?>
 ```
 
 `Output: Hello, my name is $fullName`
