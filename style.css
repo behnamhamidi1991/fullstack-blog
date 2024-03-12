@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto";
+}
+body {
+  background-color: #20283e;
+  color: #fefefe;
+  padding: 100px 10%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins";
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.course-title {
+  font-size: 72px;
+}

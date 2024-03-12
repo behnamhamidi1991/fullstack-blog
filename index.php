@@ -1,6 +1,22 @@
 <?php 
-    $title = "Learn PHP";
-    $description = "You can do this";
+
+class User {
+    // Properties
+    public $name;
+    public $email;
+
+
+    // Methods
+    public function login() {
+        echo "The user is logged in";
+    }
+}
+
+// Instantiate a new object
+$user1 = new User()
+
+
+
 
 ?>
 
@@ -12,21 +28,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
     <title>PHP</title>
 </head>
 
-<body class="bg-gray-900">
-    <header class="bg-blue-500 text-white p-4">
-        <div class="container mx-auto">
-            <h1 class="text-3xl font-semibold"><?= $title ?></h1>
-        </div>
-    </header>
-    <div class="container mx-auto p-4 mt-4">
-        <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-semibold mb-4"><?= $description ?></h2>
-            <p>In this course, you will learn the fundamentals of the PHP language</p>
-        </div>
-    </div>
+<body class="">
+    <h1 class="course-title">PHP From Scratch</h1>
+    <p>I am learning OOP right now and I will learn it like it is a piece of cake!</p>
+    <p>I will be the best computer engineer and developer the world has ever seen!</p>
+    <p>Just wait and watch!</p>
 </body>
 
 </html>
