@@ -59,3 +59,34 @@ echo MathUtility::add(1,2,3,4,5);
 
 ?>
 ```
+
+```php
+
+// Article Challenge
+class Article {
+    public $title;
+    public $content;
+    private $published = false;
+
+
+    public function __construct($title, $content) {
+        $this->title = $title;
+        $this->content = $content;
+    }
+
+    public function publish() {
+        $this-> published = true;
+    }
+
+    public function isPublished () {
+        return $this->published;
+    }
+}
+
+
+$article1 = new Article("My first post", "Lorem ipsum dolor sit amet . The graphic and typographic operators know this well, in reality all the professions dealing with the universe of communication have a stable relationship with these words, but what is it? Lorem ipsum is a dummy text without any sense. Lorem ipsum dolor sit amet . The graphic and typographic operators know this well, in reality all the professions dealing with the universe of communication have a stable relationship with these words, but what is it? Lorem ipsum is a dummy text without any sense.");
+
+
+var_dump($article1);
+
+```
