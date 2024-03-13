@@ -1,31 +1,17 @@
 <?php 
 
-class User {
-    // Properties
-    public $name;
-    public $email;
+class MathUtility {
+    public static $pi = 3.14;
 
-    public function __construct($name, $email) 
-    {
-        $this->name = $name;
-        $this->email = $email;
+    public static function add(...$nums) {
+        return array_sum($nums);
     }
 
-
-    // Methods
-    public function login() {
-        echo $this->name . " is logged in <br>";
-    }
 }
 
-// Instantiate a new object
-    $user1 = new USer ("John Doe", "johndoe@gmail.com");
-    $user1->login();
+echo MathUtility::$pi;
+echo MathUtility::add(1,2,3,4,5);
 
-    $user2 = new User("Jane Smith", "janes@gmail.com");
-    $user2->login();
-
-    var_dump($user1)
 ?>
 
 
