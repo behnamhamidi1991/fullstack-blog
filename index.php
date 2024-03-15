@@ -6,7 +6,7 @@ class User {
     public $name;
     public $email;
     public $age;
-    private $status = 'active';
+    protected $status = 'active';
 
     public function __construct($name, $email, $age) {
         $this->name = $name;
@@ -40,6 +40,7 @@ $user2->login();
 
 $user2->setStatus('deactive');
 $user2->getStatus();
+$user1->status;
 
 ?>
 
