@@ -5,19 +5,16 @@ class User {
     // Properties
     public $name;
     public $email;
-    public $age;
     protected $status = 'active';
 
-    public function __construct($name, $email, $age) {
+    public function __construct($name, $email) {
         $this->name = $name;
         $this->email = $email;
-        $this->age = $age;
     }
     
     public function login() {
         echo $this->name . ' logged in <br>';
         echo "User's email is " . $this->email . "<br>";
-        echo $this->name . " is " . $this->age . " years old" . "<br><br>";
     }
 
     // Getter
@@ -31,16 +28,20 @@ class User {
     }
 }
 
-$user1 = new User("John Doe", "john@gmail.com", 24);
-$user1->login();
 
-$user2 = new User("Jane Smith", "janesmith@gmail.com", 23);
-$user2->login();
+class Admin extends User {
+    public $level;
 
+    public function __construct($name, $email, $level) {
+        $this->level = $level;
+        parent::__construct($name, $email);
+    }
 
-$user2->setStatus('deactive');
-$user2->getStatus();
-$user1->status;
+}
+
+$admin1 = new Admin('Tom Smith', 'tom@gmail.com', 5);
+
+var_dump($admin1)
 
 ?>
 
