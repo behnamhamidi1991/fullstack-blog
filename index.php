@@ -6,6 +6,7 @@ class User {
     public $name;
     public $email;
     public $age;
+    private $status = 'active';
 
     public function __construct($name, $email, $age) {
         $this->name = $name;
@@ -18,6 +19,16 @@ class User {
         echo "User's email is " . $this->email . "<br>";
         echo $this->name . " is " . $this->age . " years old" . "<br><br>";
     }
+
+    // Getter
+    public function getStatus () {
+        echo $this->status;
+    }
+
+    // Setter
+    public function setStatus($status) {
+        $this->status = $status;
+    }
 }
 
 $user1 = new User("John Doe", "john@gmail.com", 24);
@@ -27,9 +38,8 @@ $user2 = new User("Jane Smith", "janesmith@gmail.com", 23);
 $user2->login();
 
 
-
-
-
+$user2->setStatus('deactive');
+$user2->getStatus();
 
 ?>
 
