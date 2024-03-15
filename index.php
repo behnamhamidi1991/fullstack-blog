@@ -1,13 +1,35 @@
 <?php 
 
-$num1 = 5;
-$num2 = "5";
-$fruit = "apple";
+class User {
+
+    // Properties
+    public $name;
+    public $email;
+    public $age;
+
+    public function __construct($name, $email, $age) {
+        $this->name = $name;
+        $this->email = $email;
+        $this->age = $age;
+    }
+    
+    public function login() {
+        echo $this->name . ' logged in <br>';
+        echo "User's email is " . $this->email . "<br>";
+        echo $this->name . " is " . $this->age . " years old" . "<br><br>";
+    }
+}
+
+$user1 = new User("John Doe", "john@gmail.com", 24);
+$user1->login();
+
+$user2 = new User("Jane Smith", "janesmith@gmail.com", 23);
+$user2->login();
 
 
-$result = $num1 + $num2;
 
-var_dump($result)
+
+
 
 ?>
 
@@ -24,18 +46,7 @@ var_dump($result)
 </head>
 
 <body class="">
-    <h1 class="course-title">PHP From Scratch</h1>
-    <p>I am learning OOP right now and I will learn it like it is a piece of cake!</p>
-    
-    <p> <?= "Hello, my name is " . $fullName ?> </p>
-
-    <br>
-    <br>
-    <p> <?= "Hello, my name is $fullName " ?> </p>
-
-    <br>
-    <br>
-    <p> <?= 'Hello, my name is $fullname' ?> </p>
+ 
 </body>
 
 </html>

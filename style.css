@@ -23,8 +23,24 @@ h6 {
 
 p {
   margin-bottom: 10px;
+  font-family: "Roboto";
 }
 
 .course-title {
   font-size: 72px;
+}
+
+.post-container {
+  background-color: rgb(43, 45, 59);
+  padding: 30px;
+}
+
+.post-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.post-container p {
+  line-height: 1.8;
 }
