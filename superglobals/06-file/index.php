@@ -2,6 +2,7 @@
 $title = '';
 $description = '';
 $submitted = false; 
+$messages = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   $title = htmlspecialchars($_POST['title'] ?? '');
@@ -13,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   }
 
   if (empty($description)) {
-    $message[] = ['text' => 'Description is required!', 'color' => 'text-red-500'];
+    $messages[] = ['text' => 'Description is required!', 'color' => 'text-red-500'];
     $submitted = false;
   }
 
@@ -46,15 +47,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
           $messages[] =['text' => 'File uploaded successfully!' , 'color' => 'text-green-500'];
           $submitted = true;
         } else {
-          $messages[] = ['text' => 'File upload error!', 'color' => 'text-blue-500'];
+          $messages[] = ['text' => 'File upload error!', 'color' => 'text-red-500'];
+          $submitted = false;
       }
     } else {
       $messages[] = ['text' => 'File must be an image', 'color' => 'text-blue-700'];
+      $submitted = false;
+
     }    
   }
 
+  
 
-  $submitted = true;
 }
 ?>
 
@@ -72,6 +76,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   <div class="flex justify-center items-center h-screen">
     <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
       <h1 class="text-2xl font-semibold mb-6">Create Job Listing</h1>
+      <?php foreach($messages as $message) : ?>
+          <p class="<?= $message['color'] ?>">
+            <?= $message['text'] ?>
+          </p>
+          <?php endforeach; ?>
       <form method="post" enctype="multipart/form-data">
         <div class="mb-4">
           <label for="title" class="block text-gray-700 font-medium">Title</label>
