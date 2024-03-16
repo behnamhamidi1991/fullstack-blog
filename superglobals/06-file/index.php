@@ -7,6 +7,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   $title = htmlspecialchars($_POST['title'] ?? '');
   $description = htmlspecialchars($_POST['description'] ?? '');
 
+
+  $file = $_FILES['logo'];
+
+  if ($file['error'] === UPLOAD_ERR_OK) {
+    // Specify where to upload
+    $uploadDir = 'uploads/';
+    
+    // Check and create dir
+    if (!is_dir($uploadDir)) {
+      mkdir($uploadDir, 0755, true);
+    }
+
+    // Create file name 
+    $filename = uniqid() . '-' . $file['name'];
+
+    // Check file type
+    $allowedExtensions = ['jpg', 'jpeg', 'png'];
+    $fileExtension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+
+
+    // Make sure extension is in array
+    if (in_array($fileExtension, $allowedExtensions)) {
+        // Upload file
+        if(move_uploaded_file($file['tmp_name'], $uploadDir . '/' . $filename)) {
+          echo 'File Uploaded!';
+        } else {
+          echo 'File upload error: ' . $file['error'];
+      }
+    } else {
+      echo "Invalid File Type!";
+    }    
+  }
+
+
   $submitted = true;
 }
 ?>
@@ -34,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
           <label for="description" class="block text-gray-700 font-medium">Description</label>
           <textarea id="description" name="description" placeholder="Enter job description" class="w-full px-4 py-2 border rounded focus:ring focus:ring-blue-300 focus:outline-none"><?= $description ?></textarea>
         </div>
+        <!-- FILE INPUT ************ -->
         <div class="mb-4">
           <label for="resume" class="block text-gray-700 font-medium">Logo</label>
           <input type="file" id="logo" name="logo" class="w-full px-4 py-2 border rounded focus:ring focus:ring-blue-300 focus:outline-none">
