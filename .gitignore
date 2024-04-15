@@ -1,2 +1,7 @@
 .env
 node_modules
+/vendor
+/node_modules
+/config/db.php
+.vscode
+.DB_Store
