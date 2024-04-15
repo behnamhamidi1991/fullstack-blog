@@ -1,5 +1,5 @@
 <?php 
 
-echo "Hello World!";
+require './views/home.view.php';
 
 
