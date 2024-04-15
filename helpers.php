@@ -25,7 +25,7 @@
    if (file_exists($viewPath)) {
       require $viewPath;
    } else {
-      echo "VIew '{$path}' not found!";
+      echo "VIew '{$name}' not found!";
    }
   }
 
@@ -44,6 +44,6 @@
    if (file_exists($partialPath)) {
       require $partialPath;
    } else {
-      echo "VIew '{$partialPath}' not found!";
+      echo "VIew '{$name}' not found!";
    }
   }
