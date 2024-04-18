@@ -1,3 +1,3 @@
 <?php
 
-echo "Error PAge";
+echo "Error Page";
