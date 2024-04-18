@@ -1,6 +1,6 @@
 <?php 
 
-loadView('home');
+echo 'Error page'
 
 ?>
 
