@@ -50,5 +50,5 @@
       </section>
 
   
-     <?php loadPartial('bottom-banner'); ?>
+    <?php loadPartial('bottom-banner'); ?>
     <?php loadPartial('footer'); ?>

@@ -1,3 +1,8 @@
+<?php loadPartial('head'); ?>
+<?php loadPartial('navbar'); ?>
+<?php loadPartial('showcase-search'); ?>
+<?php loadPartial('top-banner'); ?>
+
 <section class="container mx-auto p-4 mt-4">
       <div class="rounded-lg shadow-md bg-white p-3">
        <div class="flex justify-between items-center">
@@ -62,3 +67,8 @@
         Apply Now
       </a>
     </section>
+
+
+      
+    <?php loadPartial('bottom-banner'); ?>
+    <?php loadPartial('footer'); ?>
