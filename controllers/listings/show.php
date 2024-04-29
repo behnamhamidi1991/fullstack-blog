@@ -5,7 +5,11 @@ $db = new Database($config);
 
 $id = $_GET['id'] ?? '';
 
-$listing = $db->query('SELECT * FROM listings WHERE id = ' . $id)->fetch();
+$params = [
+   'id' => $id
+];
+
+$listing = $db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
 
 inspect($listing);
 
