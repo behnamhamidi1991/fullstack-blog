@@ -11,6 +11,7 @@ $params = [
 
 $listing = $db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
 
-inspect($listing);
 
-loadView('listings/show');
+loadView('listings/show', [
+    'listing' => $listing
+]);
