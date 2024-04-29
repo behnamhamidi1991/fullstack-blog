@@ -1,6 +1,5 @@
 <?php loadPartial('head'); ?>
 <?php loadPartial('navbar'); ?>
-<?php loadPartial('showcase-search'); ?>
 <?php loadPartial('top-banner'); ?>
 
 <section class="container mx-auto p-4 mt-4">
