@@ -26,8 +26,8 @@ class ListingController {
         loadView('listings/create');
     }
 
-    public function show() {
-        $id = $_GET['id'] ?? '';
+    public function show($params) {
+        $id = $params['id'] ?? '';
 
         $params = [
             'id' => $id
