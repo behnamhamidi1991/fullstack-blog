@@ -1,0 +1,16 @@
+{
+  "name": "behnamhamidi1991/fullstack-blog",
+  "description": "Job listing applicaiton",
+  "authors": [
+    {
+      "name": "Behnam Hamidi",
+      "email": "behnamhamidi688@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "Framework/",
+      "App\\": "App/"
+    }
+  }
+}
