@@ -36,6 +36,12 @@ class ListingController {
             $listing = $this->db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
 
 
+            // Check if listing exists
+            if (!$listing) {
+                ErrorController::notFound('Listing not found');
+                return;
+            }
+
             loadView('listings/show', [
                 'listing' => $listing
             ]);
