@@ -78,17 +78,28 @@ class Router {
          * @return void
          */
         public function route($uri, $method) {
-            foreach($this->routes as $route) {
-                if ($route['uri'] === $uri && $route['method'] === $method) {
-                    // Extract controller and controller method
-                    $controller = 'App\\Controllers\\'. $route['controller'];
-                    $controllerMethod = $route['controllerMethod'];
+            $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-                    // Instantiate the controller and call the method
-                    $controllerInstance = new $controller();
-                    $controllerInstance->$controllerMethod();
-                    return;
-                }
+            foreach($this->routes as $route) {
+
+                // Split the current URI into segments
+                $uriSegments = explode('/', trim($uri, '/'));
+                
+                // Split the route URI into segments
+                $routeSegments = explode('/' , trim($route['uri'], '/'));
+
+                inspect($routeSegments);
+
+                // if ($route['uri'] === $uri && $route['method'] === $method) {
+                //     // Extract controller and controller method
+                //     $controller = 'App\\Controllers\\'. $route['controller'];
+                //     $controllerMethod = $route['controllerMethod'];
+
+                //     // Instantiate the controller and call the method
+                //     $controllerInstance = new $controller();
+                //     $controllerInstance->$controllerMethod();
+                //     return;
+                // }
             }
             
             ErrorController::notFound();
