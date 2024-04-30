@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Framework\Database;
+use Framework\Validation;
 
 class ListingController {
     protected $db;
@@ -14,6 +15,9 @@ class ListingController {
     }
 
     public function index() {
+
+        inspectAndDie(Validation::match("test", 'test'));
+
         $listings = $this->db->query('SELECT * FROM listings')->fetchAll();
 
         loadView('listings/index', [
@@ -32,7 +36,7 @@ class ListingController {
         $params = [
             'id' => $id
         ];
-
+            
             $listing = $this->db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
 
 
