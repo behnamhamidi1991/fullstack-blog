@@ -50,4 +50,18 @@ class ListingController {
                 'listing' => $listing
             ]);
                 }
+
+
+  /**
+ * Store data in database
+ * 
+ * @return void 
+ * 
+ */
+
+ public function store() {
+    inspectAndDie($_POST);
+ }
 }
+
+
