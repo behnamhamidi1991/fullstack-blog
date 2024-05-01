@@ -86,7 +86,8 @@ class ListingController
         if (!empty($errors)) {
             // Reload view with errors
             loadView('listings/create', [
-                'errors' => $errors
+                'errors' => $errors,
+                'listing' => $newListingData
             ]);
         } else {
             // Submit data
