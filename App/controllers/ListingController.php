@@ -65,6 +65,10 @@ class ListingController
 
     public function store()
     {
-        inspectAndDie($_POST);
+        $allowedFields = ['title', 'description', 'salary', 'tags', 'company', 'address', 'city', 'state', 'phone', 'email', 'requirements', 'benefits'];
+
+        $newListingData = array_intersect_key($_POST, array_flip($allowedFields));
+
+        inspectAndDie($newListingData);
     }
 }
