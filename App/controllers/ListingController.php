@@ -83,6 +83,14 @@ class ListingController
             }
         }
 
-        inspectAndDie($errors);
+        if (!empty($errors)) {
+            // Reload view with errors
+            loadView('listing/create', [
+                'errors' => $errors
+            ]);
+        } else {
+            // Submit data
+            echo "Success";
+        }
     }
 }
