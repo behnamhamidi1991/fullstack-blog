@@ -5,7 +5,8 @@ namespace App\Controllers;
 use Framework\Database;
 use Framework\Validation;
 
-class ListingController {
+class ListingController
+{
     protected $db;
 
     public function __construct()
@@ -14,7 +15,8 @@ class ListingController {
         $this->db = new Database($config);
     }
 
-    public function index() {
+    public function index()
+    {
 
         inspectAndDie(Validation::match("test", 'test'));
 
@@ -26,42 +28,43 @@ class ListingController {
     }
 
 
-    public function create () {
+    public function create()
+    {
         loadView('listings/create');
     }
 
-    public function show($params) {
+    public function show($params)
+    {
         $id = $params['id'] ?? '';
 
         $params = [
             'id' => $id
         ];
-            
-            $listing = $this->db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
+
+        $listing = $this->db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
 
 
-            // Check if listing exists
-            if (!$listing) {
-                ErrorController::notFound('Listing not found');
-                return;
-            }
+        // Check if listing exists
+        if (!$listing) {
+            ErrorController::notFound('Listing not found');
+            return;
+        }
 
-            loadView('listings/show', [
-                'listing' => $listing
-            ]);
-                }
+        loadView('listings/show', [
+            'listing' => $listing
+        ]);
+    }
 
 
-  /**
- * Store data in database
- * 
- * @return void 
- * 
- */
+    /**
+     * Store data in database
+     * 
+     * @return void 
+     * 
+     */
 
- public function store() {
-    inspectAndDie($_POST);
- }
+    public function store()
+    {
+        inspectAndDie($_POST);
+    }
 }
-
-
