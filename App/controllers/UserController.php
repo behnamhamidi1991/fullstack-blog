@@ -159,15 +159,24 @@ class UserController
             $errors['email'] = 'Please enter a valid email!';
         }
 
-        if (!Validation::string($password)) {
+        if (!Validation::string($password, 6, 50)) {
             $errors['password'] = 'Password must be at least 6 characters';
         }
 
+
+        // Check for errors
         if (!empty($errors)) {
             loadView('users/login', [
                 'errors' => $errors
             ]);
             exit;
         }
+
+        // Check for email
+        $params = [
+            'email' => $email
+        ];
+
+        $user = $this->db->query('SELECT * FROM users WHERE email = :email', $params);
     }
 }
