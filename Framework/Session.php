@@ -68,4 +68,17 @@ class Session
             unset($_SESSION[$key]);
         }
     }
+
+    /**
+     * Clear all session data
+     * 
+     * @return void
+     * 
+     */
+
+    public static function clearAll()
+    {
+        session_unset();
+        session_destroy();
+    }
 }
