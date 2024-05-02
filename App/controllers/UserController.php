@@ -70,6 +70,7 @@ class UserController
                 ]
             ]);
             exit;
+        } else {
         }
 
         inspectAndDie("Store");
