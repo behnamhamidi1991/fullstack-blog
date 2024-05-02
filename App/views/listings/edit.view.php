@@ -13,7 +13,8 @@
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
-        <form method="POST" action="/listings">
+        <form method="POST" action="/listings/<?= $listing->id ?>">
+            <input type="hidden" name="_method" value="PUT">
             <h2 class="text-2xl font-bold mb-6 text-center text-gray-500">
                 Job Info
             </h2>
@@ -59,7 +60,7 @@
             <button class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 my-3 rounded focus:outline-none">
                 Save
             </button>
-            <a href="/" class="block text-center w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded focus:outline-none">
+            <a href="/listings/<?= $listing->id ?>" class="block text-center w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded focus:outline-none">
                 Cancel
             </a>
         </form>
